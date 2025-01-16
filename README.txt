@@ -1,6 +1,3 @@
-# csv_file_compare
-A set of csv file comparison utilities written in various languages: Perl, Python, Ruby, Bash + awk, and Java.
-
 The backstory:
 ===============
 This is a set of csv file comparison utilities that I wrote for a project many years ago.
