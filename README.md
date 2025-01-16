@@ -43,8 +43,8 @@ ruby compare_files.rb -f internet_users_v1.csv,internet_users_v2.csv -k Location
 # Usage of Java program
 java CompareFiles
 
-# Invoke the Java Swing UI as indicated above.
-# Then click on the buttons to specify the file locations, the key, the tolerance, columns to exclude.
-# Finally, click on the "Diff" button to view the differences in the bottom grid.
-# See the screenshot of the Java GUI program for clarity.
+- Invoke the Java Swing UI as indicated above.
+- Then click on the buttons to specify the file locations, the key, the tolerance, columns to exclude.
+- Finally, click on the "Diff" button to view the differences in the bottom grid.
+- See the screenshot of the Java GUI program for clarity.
 
