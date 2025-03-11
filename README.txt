@@ -1,6 +1,6 @@
 The backstory:
 ===============
-This is a set of csv file comparison utilities that I wrote for a project many years ago.
+This is a set of csv file comparison utilities that I wrote many years ago.
 It started off with Perl, but then I was curious to see how it compares to other languages. So here we are.
 The csv comparison programs are in the following languages:
 1) Perl (original and modified with optimizations)

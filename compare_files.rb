@@ -1,5 +1,4 @@
 #!/usr/bin/ruby
-# $Id: compare_files.rb 27007 2013-12-02 15:53:34Z amkjpf $
 # ==============================================================================
 # Name: compare_files.rb
 # Desc: A Ruby program to compare files.

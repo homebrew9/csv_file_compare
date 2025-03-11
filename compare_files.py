@@ -1,13 +1,10 @@
 #!/usr/bin/env python
-# $Id: compare_files.py 27007 2013-12-02 15:53:34Z amkjpf $
 # ==============================================================================
 # Name    : compare_files.py
 # Desc    : A Python program to compare two csv files in a highly customized
 #           fashion.
 # Usage   : python compare_files.py -f file1.csv,file2.csv -k <key_list> \
 #                                   -p <precision> -x <exclude_list>
-# Example : python compare_files.py -f sybase.csv,oracle.csv \
-#                                   -k FUNDCODE,FUNDNAME -p 0.01 -x CAPITAL
 # By      : prat
 # On      : 11/18/2013
 # ==============================================================================

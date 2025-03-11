@@ -2,29 +2,7 @@
 # ==================================================================================================
 # Name: compare_files.pl
 # Desc: A Perl program to compare csv files in a highly customized way. Floating point numbers can
-#       be compared to a specified degree of precision. An example of the main data structures is
-#       given below. Let's say the key columns are "FUNDNAME,FUNDCODE" and the exclude column is
-#       "INTEREST" and one csv file looks like this:
-#       -----------------------------------------------------------------------------
-#       FUNDNAME,CAPITAL,FUNDCODE,INTEREST,AMOUNT
-#       MEIJI,100,F1,200,203.3456
-#       Guardian,11.23,F2,22.34,44.56
-#       -----------------------------------------------------------------------------
-#       Then the header array @hdr looks like this:
-#       @hdr = (
-#                  [ 'FUNDNAME',  'K',  'I' ],
-#                  [ 'CAPITAL',   'NK', 'I' ],
-#                  [ 'FUNDCODE',  'K',  'I' ],
-#                  [ 'INTEREST',  'NK', 'X' ],
-#                  [ 'AMOUNT',    'NK', 'I' ]
-#              );
-#       And the data hash %dh looks like this:
-#       %dh = (
-#               'MEIJI,F1'   => [ 100,    203.3456 ],
-#               'Guardian,F2 => [ 11.23,  44.56    ]
-#             );
-#
-#       The hash is then used for comparison with the data being read from the second file.
+#       be compared to a specified degree of precision.
 # By  : prat
 # Revision History:
 # By       Date              Remarks
@@ -39,10 +17,6 @@
 use strict;
 use Getopt::Std;
 
-#
-# $Id: compare_files.pl 26640 2013-11-08 16:31:40Z amkjpf $
-#
-
 my %opts;                 # hash for storing arguments
 my ($file1, $file2, $dp); # files to compare, degree of precision
 my %keys;                 # key columns
@@ -56,7 +30,6 @@ sub check_usage {
     print "            <KEYS>    = comma-delimited list of key columns\n";
     print "            <N>       = degree of precision sought for comparison\n";
     print "            <EXCLUDE> = comma-delimited list of columns to be excluded for comparison\n";
-    print "Example : perl compare_files.pl -f sybase.csv,oracle.csv -k FUNDCODE,FUNDNAME,FUND_ID -p 0.0001 -x INTEREST,ISSUEDATE\n";
     exit;
   }
 }

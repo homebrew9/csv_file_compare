@@ -1,5 +1,4 @@
 /*
- * $Id: CompareFiles.java 27515 2014-01-08 16:35:30Z amkjpf $
  * =============================================================================================
  * Name: CompareFiles.java
  * Desc: A Java Swing application for custom comparison of two csv files.

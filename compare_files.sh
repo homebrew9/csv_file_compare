@@ -1,5 +1,4 @@
 #!/usr/bin/bash
-# $Id: compare_files.sh 26650 2013-11-08 23:00:10Z amkjpf $
 # ===============================================================================================================
 # Name    : compare_files.sh
 # Desc    : A shell script to compare two csv files. The script does parameter value checks and then sorts the

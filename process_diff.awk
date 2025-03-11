@@ -1,4 +1,3 @@
-# $Id: process_diff.awk 27011 2013-12-02 16:15:09Z amkjpf $
 # =========================================================================================================
 # Name    : process_diff.awk
 # Desc    : An awk wrapper around the diff command to process further and return customized output.
@@ -6,13 +5,6 @@
 #           Any other value (zero or the null string, "") is FALSE.
 # Usage   : awk -v keys=<key_list> -v files=<file_list> -v tolerance=N -v header=<header_columns> \
 #               -v exclude=<exclude_list> -f process_diff.awk diff_file
-# Example : awk -v keys="FUNDCODE,FUNDNAME" \
-#               -v files="sybase.csv,oracle.csv" \
-#               -v tolerance="0.001" \
-#               -v header="FUNDNAME,FUNDCODE,CAPITAL,INTEREST,AMOUNT" \
-#               -v exclude="INTEREST,AMOUNT" \
-#               -f process_diff.awk \
-#               files.diff
 # By      : prat
 # On      : 11/5/2013
 # =========================================================================================================

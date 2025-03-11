@@ -2,36 +2,7 @@
 # ==================================================================================================
 # Name: compare_files.pl
 # Desc: A Perl program to compare csv files in a highly customized way. Floating point numbers can
-#       be compared to a specified degree of precision. An example of the main data structures is
-#       given below. Let's say the key columns are "FUNDNAME,FUNDCODE" and one csv file looks like
-#       this:
-#       -----------------------------------------------------------------------------
-#       FUNDNAME,FUNDCODE,CAPITAL,INTEREST,AMOUNT
-#       MEIJI,F1,100,200,203.3456
-#       Guardian,F2,11.23,22.34,44.56
-#       -----------------------------------------------------------------------------
-#       Then the header array @hdr1 looks like this:
-#       @hdr1 = (
-#                  [ 'FUNDNAME',  'KEY',     'INCLUDE' ],
-#                  [ 'FUNDCODE',  'KEY',     'INCLUDE' ],
-#                  [ 'CAPITAL',   'NON_KEY', 'INCLUDE' ],
-#                  [ 'INTEREST',  'NON_KEY', 'EXCLUDE' ],
-#                  [ 'AMOUNT',    'NON_KEY', 'INCLUDE' ]
-#               );
-#       And the data hash %dh1 looks like this:
-#       %dh1 = ( 'MEIJI,F1'    => {
-#                                    'LINE_NUMBER'  => 2,
-#                                    'CAPITAL'      => [ 2, 100      ],
-#                                    'AMOUNT'       => [ 4, 203.3456 ]
-#                                 },
-#                'Guardian,F2' => {
-#                                     'LINE_NUMBER' => 3,
-#                                     'CAPITAL'     => [ 2, 11.23  ],
-#                                     'AMOUNT'      => [ 4, 44.56  ]
-#                                 }
-#              );
-#       The two hashes are then compared to yield a full outer join. For matching keys, the list
-#       of non-matching value columns are printed.
+#       be compared to a specified degree of precision.
 # By  : prat
 # Revision History:
 # By       Date              Remarks
@@ -44,10 +15,6 @@
 # ==================================================================================================
 use strict;
 use Getopt::Std;
-
-#
-# $Id: compare_files.pl 26418 2013-10-28 15:29:16Z amkjpf $
-#
 
 my %opts;                 # hash for storing arguments
 my ($file1, $file2, $dp); # files to compare, degree of precision
@@ -63,7 +30,6 @@ sub check_usage {
     print "            <KEYS>    = comma-delimited list of key columns\n";
     print "            <N>       = degree of precision sought for comparison\n";
     print "            <EXCLUDE> = comma-delimited list of columns to be excluded for comparison\n";
-    print "Example : perl compare_files.pl -f sybase.csv,oracle.csv -k FUNDCODE,FUNDNAME,FUND_ID -p 0.0001 -x INTEREST,ISSUEDATE\n";
     exit;
   }
 }
@@ -135,7 +101,7 @@ sub check_for_exclude_cols {
 sub compare_headers {
   # This subroutine compares two arrays, though not in the strictest sense.
   # That's because position of elements is **NOT** significant. Thus, the arrays:
-  # ('FUNDCODE', 'FUNDNAME', 'CAPITAL') and ('CAPITAL', 'FUNDCODE', 'FUNDNAME') are
+  # ('A', 'B', 'C') and ('C', 'A', 'B') are
   # considered equal.
   my ($aref1, $f1, $aref2, $f2) = @_;
   my (@arr1, @arr2);
